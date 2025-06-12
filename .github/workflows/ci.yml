@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Push to server
+      - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -16,5 +16,14 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
+            set -e
             cd ${{ secrets.PROJECT_PATH }}
+            if [ ! -d .git ]; then
+              git clone ${{ secrets.REPO_URL }} .
+            fi
+            git fetch origin main || true
+            git checkout main || git checkout -b main
+            git reset --hard origin/main
+            # Place tes autres commandes de build/deploy ici si besoin
+            echo "Déploiement terminé avec succès !"
             sudo git pull
