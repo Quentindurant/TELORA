@@ -1,10 +1,12 @@
 <?php
+echo '<!-- DEBUG: db.php utilisé depuis ' . __FILE__ . ' -->';
 try {
     // Établir la connexion avec la base de données
     $host = 'localhost';
     $db   = 'LDAP';
     $user = 'telora';
     $pass = 'jmaMy3!OQm1yvvL2';
+    echo '<!-- DEBUG: Utilisateur SQL=' . $user . ' -->';
     $charset = 'utf8mb4';
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
     $options = [
