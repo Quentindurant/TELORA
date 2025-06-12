@@ -19,11 +19,12 @@ jobs:
             set -e
             cd ${{ secrets.PROJECT_PATH }}
             if [ ! -d .git ]; then
-              git clone ${{ secrets.REPO_URL }} .
+              sudo git clone ${{ secrets.REPO_URL }} .
             fi
-            git fetch origin main || true
-            git checkout main || git checkout -b main
-            git reset --hard origin/main
+            sudo git config --global --add safe.directory ${{ secrets.PROJECT_PATH }}
+            sudo git fetch origin main || true
+            sudo git checkout main || sudo git checkout -b main
+            sudo git reset --hard origin/main
             # Place tes autres commandes de build/deploy ici si besoin
             echo "Déploiement terminé avec succès !"
             sudo git pull
