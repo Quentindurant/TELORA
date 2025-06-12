@@ -3,7 +3,7 @@
 <head>
 <title>Redirection Telora</title>
 
-<meta http-equiv="refresh" content="1; URL=https://54.36.189.50/login/">
+<meta http-equiv="refresh" content="1; URL=https://telora.quentindurant.com/login/">
 </head>
 
 <body>

@@ -4,7 +4,7 @@
 	
 	/*// create for tcp
 	$sock = socket_create(AF_INET, SOCK_STREAM, getprotobyname('tcp'));
-	socket_bind($sock, '54.36.189.50',8001);
+	socket_bind($sock, 'telora.quentindurant.com',8001);
 	socket_listen($sock);
 	*/
     
@@ -16,7 +16,7 @@
     
     // "bind" the socket to the address to "localhost", on port $port
     // so this means that all connections on this port are now our resposibility to send/recv data, disconnect, etc..
-    socket_bind($sock, "54.36.189.50", 8001);
+    socket_bind($sock, "telora.quentindurant.com", 8001);
     
     // start listen for connections
     socket_listen($sock);
@@ -62,7 +62,7 @@
 					</soap:Envelope>";
 			
 			$header = "POST / HTTP/1.1\r\n
-				Host: 54.36.189.50:8001\r\n
+				Host: telora.quentindurant.com:8001\r\n
 				User-Agent: ACS GC\r\n
 				Content-Type: text/xml; charset=utf-8\r\n
 				SOAPAction: cwmp:InformResponse\r\n	
