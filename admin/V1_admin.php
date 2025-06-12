@@ -44,7 +44,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Admin') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telora TESTT</title>
+    <title>Telora TEST</title>
     <!-- je propose ce nom mdr comme le LDAP n'est qu'une petite aprtie du site -->
     <link rel="icon" type="image/png" href="logo/Logo-ldap.png">
     <link rel="shortcut icon" type="image/png" href="logo/Logo-ldap.png">
